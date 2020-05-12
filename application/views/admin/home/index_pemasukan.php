@@ -62,6 +62,7 @@ echo validation_errors('<div class="alert alert-warning">', '</div>');
                         <th width="5%"></th>
                         <th></th>
                         <th></th>
+                        <th></th>
                         <th style="font-size: 30px;">Jumlah</th>
                         <th style="font-size: 30px;">Rp. <?php echo number_format($total_pemasukan_user, '0', ',', '.'); ?></th>
                         <th width="22%"></th>

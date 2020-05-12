@@ -19,6 +19,7 @@ class Home extends CI_Controller
     {
         $id                         = $this->session->userdata('id');
         $user                       = $this->user_model->user_detail($id);
+        $kas_user                    = $this->kas_model->get_kas_user($id);
         $total_pemasukan_user       = $this->kas_model->total_pemasukan_user($id);
         $total_pengeluaran_user     = $this->kas_model->total_pengeluaran_user($id);
 
@@ -27,6 +28,7 @@ class Home extends CI_Controller
             'title'                     => 'Welcome',
             'total_pemasukan_user'      => $total_pemasukan_user,
             'total_pengeluaran_user'    => $total_pengeluaran_user,
+            'kas_user'                  => $kas_user,
             'user'                      => $user,
             'content'                   => 'admin/home/index_home'
         );

@@ -95,4 +95,25 @@
     </div>
 
 
+    <div class="col-xl-4 col-md-6 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-uppercase mb-1">Saldo Akhir</div>
+                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
+                            <?php $saldo = $total_pemasukan_user - $total_pengeluaran_user; ?>
+                            Rp. <?php echo number_format($saldo, '0', ',', '.'); ?>
+                        </div>
+                        
+                    </div>
+                    <div class="col-auto">
+                        <i class="ti-credit-card fa-2x text-info"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </div>

@@ -17,6 +17,15 @@ class Kas_model extends CI_Model
         $query = $this->db->get();
         return $query->result();
     }
+    public function get_kas_user($id)
+    {
+        $this->db->select('*');
+        $this->db->from('kas');
+        $this->db->where('user_id', $id) ;       
+        $this->db->order_by('id', 'DESC');
+        $query = $this->db->get();
+        return $query->result();
+    }
 
     // Filter By Date Only
     public function searchalkas($startdate, $enddate)
