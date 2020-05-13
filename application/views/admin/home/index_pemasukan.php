@@ -7,14 +7,12 @@ if ($this->session->flashdata('message')) {
     echo '</div>';
 }
 echo validation_errors('<div class="alert alert-warning">', '</div>');
-
 ?>
 <!-- Invoice Example -->
 <div class="mb-4">
     <div class="card">
         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
             <h6 class="m-0 font-weight-bold text-primary">Pemasukan</h6>
-
             <!-- <a class="m-0 float-right btn btn-primary btn-sm" href="<?php echo base_url('admin/pemasukan/filter_pemasukan'); ?>"> Lihat Per tanggal <i class="fa fa-calendar ml-3"></i></a> -->
             <a class="m-0 float-right btn btn-primary btn-sm bg-gradient-primary" href="<?php echo base_url('admin/home/create_pemasukan'); ?>">Add New <i class="ti-plus"></i></a>
         </div>
@@ -46,8 +44,6 @@ echo validation_errors('<div class="alert alert-warning">', '</div>');
                                 <?php else : ?>
                                     Rp. <?php echo number_format($pemasukan->nominal, '0', ',', '.') ?>
                                 <?php endif; ?>
-
-
                             </td>
                             <td>
                                 <?php include "view_pemasukan.php"; ?>
@@ -55,7 +51,6 @@ echo validation_errors('<div class="alert alert-warning">', '</div>');
                         </tr>
                     <?php $no++;
                     endforeach; ?>
-
                 </tbody>
                 <tfoot>
                     <tr>
@@ -71,15 +66,8 @@ echo validation_errors('<div class="alert alert-warning">', '</div>');
             </table>
         </div>
         <div class="card-footer">
-
-
-
         </div>
-
-
-
     </div>
-
     <div class="pagination col-md-12 text-center mt-3">
         <?php if (isset($pagination)) {
             echo $pagination;

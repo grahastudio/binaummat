@@ -25,6 +25,7 @@ class Dashboard extends CI_Controller
         $total_pengeluaran      = $this->kas_model->total_pengeluaran();
         $kas                    = $this->kas_model->get_kas_dahsboard();
         $perday                 = $this->kas_model->get_perday();
+        $listasrama                 = $this->kas_model->list_asrama();
         $data = [
             'title'             => 'Dashboard',
             'list_user'         => $list_user,
@@ -32,6 +33,7 @@ class Dashboard extends CI_Controller
             'total_pengeluaran' => $total_pengeluaran,
             'kas'               => $kas,
             'perday'            => $perday,
+            'listasrama'        => $listasrama,
             'content'           => 'admin/dashboard/dashboard'
 
         ];

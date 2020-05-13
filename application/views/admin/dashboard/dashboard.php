@@ -69,6 +69,7 @@
         </div>
     </div>
 
+    
 
 
     <!-- Invoice Example -->
@@ -175,6 +176,55 @@
         </div>
     </div>
 
+
+
+
+
+
+    <!-- Invoice Example -->
+    <div class="col-xl-8 col-lg-7 mb-4">
+        <div class="card">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Data Asrama</h6>
+                <a class="m-0 float-right btn btn-danger btn-sm" href="<?php echo base_url('admin/kas/filter_kas'); ?>">View More <i class="fas fa-chevron-right"></i></a>
+            </div>
+            <div class="table-responsive">
+                <table class="table align-items-center table-flush">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Asrama</th>
+                            <th>Pemasukan</th>
+                            <th>Pengeluaran</th>
+                            <th>Saldo</th>
+                            <!-- <th>Action</th> -->
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($listasrama as $listasrama) : ?>
+
+                            <tr>
+                            <tr>
+                                <td><?php echo $listasrama->asrama_name;?></td>
+                                <td>Rp. <?php echo number_format($listasrama->nominal, '0', ',', '.'); ?></td>
+                                <td>Rp. <?php echo number_format($listasrama->pengeluaran, '0', ',', '.'); ?></td>
+                                <td>
+                                    <?php $saldo = $listasrama->nominal - $listasrama->pengeluaran;?>
+                                Rp. <?php echo number_format($saldo, '0', ',', '.'); ?>
+                            </td>
+                                
+                                <!-- <td><a href="<?php echo base_url('admin/dashboard/view/' . $kas->id); ?>" class="btn btn-primary btn-sm">Detail</a></td> -->
+
+
+                            </tr>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-footer"></div>
+        </div>
+    </div>
 
 
 

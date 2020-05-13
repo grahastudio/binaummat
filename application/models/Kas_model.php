@@ -518,4 +518,21 @@ class Kas_model extends CI_Model
         $query = $this->db->get();
         return $query->result();
     }
+    // List Pemasukan Asrama dashboard
+    public function list_asrama()
+    {
+        $this->db->select_sum('pengeluaran');
+        $this->db->select('kas.*,asrama.asrama_name, SUM(nominal) AS nominal, SUM(pengeluaran) AS pengeluaran');
+        $this->db->from('kas');
+        // Join
+        $this->db->join('asrama', 'asrama.id = kas.asrama_id', 'LEFT');
+        $this->db->group_by('asrama_name');
+        // $this->db->where('');
+        $query = $this->db->get();
+        return $query->result();
+
+
+        
+
+    }
 }
